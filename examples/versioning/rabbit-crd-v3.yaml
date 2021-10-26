@@ -1,0 +1,92 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: rabbits.mammals.animals.com
+spec:
+  preserveUnknownFields: false
+  group: mammals.animals.com
+  names:
+    kind: Rabbit
+    listKind: RabbitList
+    plural: rabbits
+    singular: rabbit
+  scope: Namespaced
+  versions:
+
+    - name: v1
+      served: true
+      storage: false
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            apiVersion:
+              description: 'APIVersion defines the versioned schema of this representation of an object'
+              pattern: mammals.animals.com/v1
+              type: string
+            kind:
+              enum:
+                - Rabbit
+                - RabbitList
+              type: string
+              description: 'Kind is a string value representing the REST resource this object represents'
+            metadata:
+              type: object
+            spec:
+              type: object
+
+    - name: v2
+      served: true
+      storage: false
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            apiVersion:
+              description: 'APIVersion defines the versioned schema of this representation of an object'
+              pattern: mammals.animals.com/v1
+              type: string
+            kind:
+              enum:
+                - Rabbit
+                - RabbitList
+              type: string
+              description: 'Kind is a string value representing the REST resource this object represents'
+            metadata:
+              type: object
+            spec:
+              type: object
+              required:
+                - v2color
+              description: The schema for Rabbit
+              properties:
+                v2color:
+                  type: string
+
+    - name: v3
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            apiVersion:
+              description: 'APIVersion defines the versioned schema of this representation of an object'
+              pattern: mammals.animals.com/v1
+              type: string
+            kind:
+              enum:
+                - Rabbit
+                - RabbitList
+              type: string
+              description: 'Kind is a string value representing the REST resource this object represents'
+            metadata:
+              type: object
+            spec:
+              type: object
+              required:
+                - v3color
+              description: The schema for Rabbit
+              properties:
+                v3color:
+                  type: string
