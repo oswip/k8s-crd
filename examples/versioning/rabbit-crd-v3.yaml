@@ -56,12 +56,6 @@ spec:
               type: object
             spec:
               type: object
-              required:
-                - v2color
-              description: The schema for Rabbit
-              properties:
-                v2color:
-                  type: string
 
     - name: v3
       served: true
