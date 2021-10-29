@@ -45,7 +45,7 @@ spec:
 
     - name: v2
       served: true
-      storage: false
+      storage: true
       schema:
         openAPIV3Schema:
           type: object
