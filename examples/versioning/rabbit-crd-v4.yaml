@@ -75,3 +75,67 @@ spec:
                   minimum: 1
                 v2color:
                   type: string
+
+    # v3 completely breaks backward compatibility.. v1 or v2 resources created will be empty
+    - name: v3
+      served: true
+      storage: false
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            apiVersion:
+              pattern: mammals.animals.com/v3
+              type: string
+            kind:
+              enum:
+                - Rabbit
+                - RabbitList
+              type: string
+            metadata:
+              type: object
+            spec:
+              type: object
+              required:
+                - v3family
+              description: The schema for Rabbit
+              properties:
+                v3family:
+                  type: string
+
+
+    # v4 breaks backward compatibility.. v1 or v2 resources created will be incomplete/partial
+    - name: v4
+      served: true
+      storage: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            apiVersion:
+              pattern: mammals.animals.com/v4
+              type: string
+            kind:
+              enum:
+                - Rabbit
+                - RabbitList
+              type: string
+            metadata:
+              type: object
+            spec:
+              type: object
+              required:
+                - v1name
+                - v2color
+                - v3family
+                - v4speed
+              description: The schema for Rabbit
+              properties:
+                v1name:
+                  type: string
+                v2color:
+                  type: string
+                v3family:
+                  type: string
+                v4speed:
+                  type: string

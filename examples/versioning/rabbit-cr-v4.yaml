@@ -1,0 +1,11 @@
+apiVersion: "mammals.animals.com/v4"
+kind: Rabbit
+metadata:
+  name: rabbit-cr-v4
+spec:
+  v1name: jazz
+  v2color: red
+  v3family: jack
+  v4speed: quickest
+
+
