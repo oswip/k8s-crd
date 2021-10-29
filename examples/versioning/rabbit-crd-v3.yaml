@@ -21,7 +21,6 @@ spec:
           type: object
           properties:
             apiVersion:
-              description: 'APIVersion defines the versioned schema of this representation of an object'
               pattern: mammals.animals.com/v1
               type: string
             kind:
@@ -29,11 +28,20 @@ spec:
                 - Rabbit
                 - RabbitList
               type: string
-              description: 'Kind is a string value representing the REST resource this object represents'
             metadata:
               type: object
             spec:
               type: object
+              required:
+                - v1name
+                - v1age
+              description: The schema for Rabbit
+              properties:
+                v1name:
+                  type: string
+                v1age:
+                  type: integer
+                  minimum: 1
 
     - name: v2
       served: true
@@ -43,20 +51,32 @@ spec:
           type: object
           properties:
             apiVersion:
-              description: 'APIVersion defines the versioned schema of this representation of an object'
-              pattern: mammals.animals.com/v1
+              pattern: mammals.animals.com/v2
               type: string
             kind:
               enum:
                 - Rabbit
                 - RabbitList
               type: string
-              description: 'Kind is a string value representing the REST resource this object represents'
             metadata:
               type: object
             spec:
               type: object
+              required:
+                - v1name
+                - v1age
+                - v2color
+              description: The schema for Rabbit
+              properties:
+                v1name:
+                  type: string
+                v1age:
+                  type: integer
+                  minimum: 1
+                v2color:
+                  type: string
 
+    # v3 breaks backward compatibility.. will not be able to create v1 or v2 resources
     - name: v3
       served: true
       storage: true
@@ -65,22 +85,20 @@ spec:
           type: object
           properties:
             apiVersion:
-              description: 'APIVersion defines the versioned schema of this representation of an object'
-              pattern: mammals.animals.com/v1
+              pattern: mammals.animals.com/v3
               type: string
             kind:
               enum:
                 - Rabbit
                 - RabbitList
               type: string
-              description: 'Kind is a string value representing the REST resource this object represents'
             metadata:
               type: object
             spec:
               type: object
               required:
-                - v3color
+                - v3family
               description: The schema for Rabbit
               properties:
-                v3color:
+                v3family:
                   type: string

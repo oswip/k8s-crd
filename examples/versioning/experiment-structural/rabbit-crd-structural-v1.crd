@@ -12,8 +12,7 @@ spec:
     singular: rabbit
   scope: Namespaced
   versions:
-
-    - name: v2
+    - name: v1
       served: true
       storage: true
       schema:
@@ -22,7 +21,7 @@ spec:
           properties:
             apiVersion:
               description: 'APIVersion defines the versioned schema of this representation of an object'
-              pattern: mammals.animals.com/v2
+              pattern: mammals.animals.com/v1
               type: string
             kind:
               enum:
@@ -35,8 +34,36 @@ spec:
             spec:
               type: object
               required:
-                - v2color
+                - name
+                - friends
               description: The schema for Rabbit
               properties:
-                v2color:
+                name:
                   type: string
+                v1color:
+                  type: string
+                v1size:
+                  type: string
+                v1age:
+                  type: integer
+                  minimum: 42
+                friends:
+                  type: array
+                  items:
+                    type: object
+                    oneOf:
+                      - properties:
+                          v1color:
+                            example: "blue"
+                          v1size:
+                            example: "large"
+                          v1age:
+                            example: 3
+                            minimum: 42
+              # anyOf:
+              # - properties:
+              #     v1age:
+              #       type: integer
+              #       minimum: 42
+              #     required: ["v1age"]
+

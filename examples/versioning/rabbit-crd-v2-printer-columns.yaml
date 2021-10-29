@@ -16,6 +16,19 @@ spec:
     - name: v1
       served: true
       storage: false
+      additionalPrinterColumns:
+        - name: Kind
+          type: string
+          description: Custom resource kind
+          jsonPath: .kind
+        - name: state
+          description: Custom resource state
+          type: string
+          jsonPath: .status.state
+        - name: age
+          description: Creation time
+          type: date
+          jsonPath: .metadata.creationTimestamp
       schema:
         openAPIV3Schema:
           type: object
@@ -46,6 +59,19 @@ spec:
     - name: v2
       served: true
       storage: true
+      additionalPrinterColumns:
+        - name: Kind
+          type: string
+          description: Custom resource kind
+          jsonPath: .kind
+        - name: state
+          description: Custom resource state
+          type: string
+          jsonPath: .status.state
+        - name: age
+          description: Creation time
+          type: date
+          jsonPath: .metadata.creationTimestamp
       schema:
         openAPIV3Schema:
           type: object

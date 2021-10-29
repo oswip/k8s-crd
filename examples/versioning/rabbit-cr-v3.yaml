@@ -1,0 +1,8 @@
+apiVersion: "mammals.animals.com/v3"
+kind: Rabbit
+metadata:
+  name: rabbit-cr-v3
+spec:
+  v3family: jack
+
+
