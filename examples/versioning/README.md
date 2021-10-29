@@ -44,6 +44,6 @@ Backward-compatible updates to CRDs will not break deployed controllers. This al
 
 ### Without backward compatibility
 Once a breaking change is made however, the need arises for one of:
-1. Conversion webhooks
+1. [Conversion Webhooks](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definition-versioning/#webhook-conversion)
 2. Updating all affected K8S CRs and controllers at the same time as the breaking CRD
 
