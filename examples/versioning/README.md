@@ -26,6 +26,9 @@ Each CR ([v1](rabbit-cr-v1.yaml), [v2](rabbit-cr-v2.yaml), [v3](rabbit-cr-v3.yam
 
 ## CRD/CR Support
 Since CRD v3 breaks backward compatibility, it only supports v3 CRs.
+
+Oberve this by installing the v3 CRD and then trying to create a v1 or v2 CR; notice that the spec of the created object is empty (`{}`).
+
 || CR v1 | CR v2 | CR v3 |
 |---|---|---|---|
 | CRD v1 | YES | NO | NO |
