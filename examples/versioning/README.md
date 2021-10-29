@@ -24,6 +24,18 @@ There are 3 versions of CRD here.
 ## CR description
 Each CR ([v1](rabbit-cr-v1.yaml), [v2](rabbit-cr-v2.yaml), [v3](rabbit-cr-v3.yaml)) is a straightforward instantiation of its respective crd.
 
+## CRD/CR Support
+Since CRD v3 breaks backward compatibility, it only supports v3 CRs.
+|| CR v1 | CR v2 | CR v3 |
+|---|---|---|---|
+| CRD v1 | YES | NO | NO |
+| CRD v2 | YES | YES | NO |
+| CRD v3 | NO | NO | YES |
 
+## Conclusion
+If only additive changes are made between versions, a CR of any previous version can be created/managed on the cluster.
 
+Once a breaking change is made, the need arises for one of:
+1. Conversion webhooks
+2. When the breaking CRD is installed, all affected K8S CRs and controllers should be updated with it.
 
