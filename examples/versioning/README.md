@@ -33,7 +33,7 @@ Since CRD v3 breaks backward compatibility, it only supports v3 CRs.
 | CRD v3 | NO | NO | YES |
 
 ## Conclusion
-If only additive changes are made between versions, a CR of any previous version can be created/managed on the cluster.
+If backwawrd compatibility is maintained (only additive changes are made between versions), a CR (and controller) of any previous version can be created/managed on the cluster.
 
 Once a breaking change is made, the need arises for one of:
 1. Conversion webhooks
