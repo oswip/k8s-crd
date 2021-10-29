@@ -1,0 +1,20 @@
+apiVersion: "amphibians.animals.com/v1"
+kind: Frog
+metadata:
+  name: frog-cr-v1
+spec:
+  prey:
+    - cricket:
+        name: jiminy
+        color: brown
+      fly:
+        name: super
+        size: small
+    - cricket:
+        name: jiminy
+        color: brown
+      fly:
+        name: super
+        size: small
+
+

@@ -1,0 +1,14 @@
+apiVersion: "amphibians.animals.com/v2"
+kind: Frog
+metadata:
+  name: frog-cr-v2
+spec:
+  characteristic:
+    # it could be color
+    #color: blue
+
+    # age: 5
+
+    other:
+      firstName: kermit
+
