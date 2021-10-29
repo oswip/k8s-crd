@@ -28,7 +28,7 @@ There are 3 versions of CRD here.
 Each CR ([v1](rabbit-cr-v1.yaml), [v2](rabbit-cr-v2.yaml), [v3](rabbit-cr-v3.yaml), [v4](rabbit-cr-v4.yaml)) is a straightforward instantiation of its respective crd.
 
 ## CRD/CR Support
-Since CRD v3 breaks backward compatibility, it only supports v3 CRs.
+Since CRD v3 "starts fresh" by preserving no fields, it only supports v3 CRs.
 
 Oberve this by installing the v3 CRD and then trying to create a v1 or v2 CR; notice that the `spec` of the created object is empty (`{}`).
 
