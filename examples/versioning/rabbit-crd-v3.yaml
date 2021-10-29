@@ -76,7 +76,7 @@ spec:
                 v2color:
                   type: string
 
-    # v3 breaks backward compatibility.. will not be able to create v1 or v2 resources
+    # v3 completely breaks backward compatibility.. will not be able to create v1 or v2 resources
     - name: v3
       served: true
       storage: true
