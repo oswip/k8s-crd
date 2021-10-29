@@ -39,7 +39,11 @@ Oberve this by installing the v3 CRD and then trying to create a v1 or v2 CR; no
 ## Conclusion
 If backward compatibility is maintained (only additive changes are made between versions), a CR (and controller) of any previous version can be created/managed on the cluster.
 
-Once a breaking change is made, the need arises for one of:
+### With backward compatibility
+Backward-compatible updates to CRDs will not break deployed controllers. This allows for easy updates: Deploy CRD v<sub>n+1</sub>, Create CR v<sub>n+1</sub>, Deploy controller v<sub>n+1</sub>. During any phase of the update, the active controller should have what it needs to function.
+
+### Without backward compatibility
+Once a breaking change is made however, the need arises for one of:
 1. Conversion webhooks
-2. When the breaking CRD is installed, all affected K8S CRs and controllers should be updated with it.
+2. Updating all affected K8S CRs and controllers at the same time as the breaking CRD
 
