@@ -20,7 +20,7 @@ make cr v=1
 There are 3 versions of CRD here.
 [v2](rabbit-crd-v2.yaml) is an augmentation of [v1](rabbit-crd-v1.yaml) (it duplicates the existing fields from v1 and adds one more).
 
-[v3](rabbit-crd-v2.yaml) breaks backward compatibility with v2 (and also with v1).
+[v3](rabbit-crd-v2.yaml) breaks backward compatibility with v2 (and also with v1) because it removes all previous fields.
 
 ## CR description
 Each CR ([v1](rabbit-cr-v1.yaml), [v2](rabbit-cr-v2.yaml), [v3](rabbit-cr-v3.yaml)) is a straightforward instantiation of its respective crd.
