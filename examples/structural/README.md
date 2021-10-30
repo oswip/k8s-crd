@@ -1,4 +1,4 @@
-# CRD Backward Compatibility
+# CRD Structural Schema
 
 ## Makefile
 To shorten kubectl commands, there's a [Makefile](Makefile)
