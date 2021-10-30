@@ -4,12 +4,7 @@ metadata:
   name: frog-cr-v3
 spec:
   characteristics:
-    # it could be color
-    #color: blue
-
-    # age: 5
-
-    - color: blue
-    - other:
-      firstName: klaus
+    - prop1: 0.5
+    - prop2: 43
+    - prop3: asdf
 

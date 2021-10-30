@@ -38,28 +38,23 @@ spec:
 
                 characteristics:
                   type: array
-                  properties:
-                    color:
-                      type: string
-                    age:
-                      type: integer
-                    other:
-                      type: object
-                      properties:
-                        firstName:
-                          type: string
-                          pattern: "^k"
                   items:
                     type: object
-                    oneOf:
+                    properties:
+                      prop1:
+                        type: number
+                      prop2:
+                        type: integer
+                      prop3:
+                        type: string
+                        pattern: "^a"
+                    anyOf:
                       - properties:
-                          color:
-                            example: blue
+                          prop1:
+                            example: 0.5
                       - properties:
-                          age:
-                            example: 2
+                          prop2:
+                            example: 43
                       - properties:
-                          other:
-                            properties:
-                              firstName:
-                                example: kermit
+                          prop3:
+                            example: kermit
