@@ -47,7 +47,7 @@ spec:
                         type: integer
                       prop3:
                         type: string
-                        pattern: "^a"
+                        pattern: "^k"
                     anyOf:
                       - properties:
                           prop1:
