@@ -1,0 +1,22 @@
+apiVersion: "amphibians.animals.com/v4"
+kind: Frog
+metadata:
+  name: frog-cr-v4
+spec:
+  characteristics:
+    - prop1a: 'abcd'
+      prop1b: 'efgh'
+    - prop2a: 'ijkl'
+      prop2b: 'mnop'
+    - prop3:
+        prop1:
+          prop1a: 'abcd'
+          prop1b: 'efgh'
+        prop2:
+          prop2a: 'ijkl'
+          prop2b: 'mnop'
+#    - prop1: 0.5
+#    - prop2: 43
+#    - prop3: klaus
+#    - prop3: kermit
+
