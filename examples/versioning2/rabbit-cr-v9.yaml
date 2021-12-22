@@ -1,0 +1,9 @@
+apiVersion: "mammals.animals.com/v1"
+kind: Rabbit
+metadata:
+  name: rabbit-cr-v9
+spec:
+  version: 0.0.9
+  v1name: floppy
+  v1age: 3
+  v2color: orange
