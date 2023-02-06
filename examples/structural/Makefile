@@ -27,3 +27,7 @@ get-cr:
 	kubectl get $(PRJNAME)
 
 
+# install kind k8s cluster manager
+install-kind-linux:
+	go install sigs.k8s.io/kind@v0.17.0
+
