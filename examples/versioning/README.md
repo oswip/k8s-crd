@@ -39,6 +39,18 @@ Oberve this by installing the v3 CRD and then trying to create a v1 or v2 CR; no
 | CRD v3 | NO | NO | YES | NO |
 | CRD v4 | PART | PART | YES | YES |
 
+## Backward Compatibility Observed Principles
+### 1. Standard properties in a k8s CRD are optional
+- Adding a new standard property is backward compatible (older CRs will still install)
+
+### 2. Required properties in a k8s CRD are not optional
+- Adding a new required property is backward compatible only if a default value is specified (older CRs will still install)
+- Adding a new required property is not backward compatible if a default value is not specified (older CRs will not install)
+
+### 3. Removing a property (standard or required) will break backward compatibility (older CRs will not install if they include the removed property)
+
+### 4. Renaming any property will break backward compatibility (because it effectively removes a property)
+
 ## Conclusion
 If backward compatibility is maintained (only additive changes are made between versions), a CR (and controller) of any previous version can be created/managed on the cluster.
 
@@ -49,4 +61,5 @@ Backward-compatible updates to CRDs will not break deployed controllers. This al
 Once a breaking change is made however, the need arises for one of:
 1. [Conversion Webhooks](https://kubernetes.io/docs/tasks/extend-kubernetes/custom-resources/custom-resource-definition-versioning/#webhook-conversion)
 2. Updating all affected K8S CRs and controllers at the same time as the breaking CRD
+
 
